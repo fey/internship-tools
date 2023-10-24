@@ -1,9 +1,14 @@
-install:
+install-duckdb:
 	rm -f duckdb_cli-linux-amd64.zip duckdb
 	curl -LOk https://github.com/duckdb/duckdb/releases/download/v0.9.1/duckdb_cli-linux-amd64.zip
 	unzip duckdb_cli-linux-amd64.zip -d .
 	rm -f duckdb_cli-linux-amd64.zip
 	chmod +x ./duckdb
+
+install-epr:
+	gem install export-pull-requests
+
+install: install-epr install-duckdb
 
 open:
 	./duckdb internship.duckdb
