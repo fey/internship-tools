@@ -1,0 +1,4 @@
+duckdb
+internship.duckdb
+*.wal
+*.csv
